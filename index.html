@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>曾丽 · 设计作品集</title>
+  <meta name="description" content="曾丽 - 数字媒体技术专业，作品集涵盖App UI设计、平面广告物料设计、视频剪辑" />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎨</text></svg>" />
+
+  <style>
+    /* ===== Reset & Base ===== */
+    *,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      font-family:"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;
+      background:#0b0d14; color:#e4e6eb; line-height:1.75;
+    }
+    a{color:#7cb8ff;text-decoration:none;transition:color 0.2s}
+    a:hover{color:#a3d0ff}
+
+    /* ===== Top Nav ===== */
+    .nav{
+      position:fixed;top:0;left:0;right:0;z-index:1000;
+      background:rgba(11,13,20,0.94);backdrop-filter:blur(14px);
+      border-bottom:1px solid rgba(255,255,255,0.06);
+      display:flex;align-items:center;justify-content:space-between;
+      padding:14px 40px;
+    }
+    .nav .logo{font-size:18px;font-weight:700;color:#fff;letter-spacing:1px}
+    .nav .links{display:flex;gap:28px;list-style:none;align-items:center}
+    .nav .links a{color:#9aa0a6;font-size:14px;transition:color 0.2s}
+    .nav .links a:hover{color:#fff}
+    .nav-cta{background:#1a73e8;color:#fff!important;padding:8px 20px;border-radius:22px;font-weight:600;font-size:13px!important}
+    .nav-cta:hover{background:#2b82ff!important;color:#fff!important}
+
+    /* ===== Hero ===== */
+    .hero{
+      min-height:100vh;display:flex;align-items:center;justify-content:center;
+      text-align:center;padding:120px 24px 80px;
+      background:
+        radial-gradient(ellipse 70% 50% at 40% 20%, rgba(26,115,232,0.12), transparent),
+        radial-gradient(ellipse 50% 40% at 75% 70%, rgba(234,67,53,0.06), transparent),
+        radial-gradient(ellipse 45% 35% at 25% 75%, rgba(52,168,83,0.05), transparent),
+        #0b0d14;
+    }
+    .hero-content{max-width:800px}
+    .hero-tag{
+      display:inline-block;background:rgba(26,115,232,0.12);
+      color:#7cb8ff;font-size:13px;padding:6px 20px;border-radius:20px;
+      border:1px solid rgba(26,115,232,0.25);margin-bottom:32px;letter-spacing:2px;
+    }
+    .hero h1{font-size:68px;font-weight:800;letter-spacing:3px;margin-bottom:14px;line-height:1.2}
+    .hero h1 .hl{background:linear-gradient(135deg,#4da3ff 0%,#7cc7ff 50%,#34a853 100%);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text}
+    .hero .sub{font-size:22px;color:#b9c6d3;font-weight:400;margin-bottom:16px}
+    .hero .desc{color:#8f96a0;font-size:16px;max-width:620px;margin:0 auto 40px;line-height:1.8}
+    .hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
+    .btn{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:14px 34px;border-radius:30px;font-weight:600;font-size:15px;
+      transition:all 0.25s;cursor:pointer;border:none;
+    }
+    .btn-p{background:#1a73e8;color:#fff}
+    .btn-p:hover{background:#2b82ff;transform:translateY(-2px);box-shadow:0 8px 28px rgba(26,115,232,0.3)}
+    .btn-o{background:transparent;color:#b9c6d3;border:1px solid #3c4043}
+    .btn-o:hover{border-color:#7cb8ff;color:#fff}
+
+    /* ===== Stats Row ===== */
+    .stats-row{display:flex;gap:40px;justify-content:center;margin-top:56px;flex-wrap:wrap}
+    .stat{text-align:center}
+    .stat-num{font-size:36px;font-weight:700;color:#fff}
+    .stat-label{font-size:13px;color:#8f96a0;margin-top:2px}
+
+    /* ===== Section ===== */
+    section{padding:100px 24px}
+    .container{max-width:1200px;margin:0 auto}
+    .sec-head{text-align:center;margin-bottom:64px}
+    .sec-tag{font-size:13px;color:#7cb8ff;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px}
+    .sec-title{font-size:42px;font-weight:700;margin-bottom:14px}
+    .sec-desc{color:#8f96a0;font-size:16px;max-width:640px;margin:0 auto}
+
+    /* ===== Theme Banner ===== */
+    .theme-banner{
+      background:linear-gradient(135deg,#131720 0%,#19202e 100%);
+      border:1px solid #1e2838;border-radius:18px;
+      padding:36px 40px;margin-bottom:36px;
+      display:flex;align-items:center;gap:28px;
+    }
+    .theme-icon{font-size:46px;flex-shrink:0}
+    .theme-info h3{font-size:22px;font-weight:700;margin-bottom:6px}
+    .theme-info p{color:#8f96a0;font-size:14px;line-height:1.7;margin-bottom:14px}
+    .tags{display:flex;flex-wrap:wrap;gap:10px}
+    .tag{background:rgba(26,115,232,0.1);color:#7cb8ff;padding:5px 15px;border-radius:18px;font-size:12px;border:1px solid rgba(26,115,232,0.18)}
+
+    /* ===== Gallery Grid ===== */
+    .gallery{display:grid;grid-template-columns:repeat(auto-fill,minmax(340px,1fr));gap:24px}
+    .g-card{
+      background:#131720;border-radius:16px;overflow:hidden;
+      border:1px solid #1e2838;transition:all 0.35s;cursor:pointer;
+    }
+    .g-card:hover{transform:translateY(-6px);border-color:#3c7eff;box-shadow:0 14px 40px rgba(0,0,0,0.45)}
+    .g-card .img-box{
+      width:100%;height:230px;display:flex;align-items:center;justify-content:center;
+      background:#0f131a;overflow:hidden;position:relative;
+    }
+    .g-card .img-box img{
+      max-width:100%;max-height:100%;object-fit:contain;
+      transition:transform 0.45s;
+    }
+    .g-card:hover .img-box img{transform:scale(1.06)}
+    .g-card .img-box::after{
+      content:'点击查看大图';position:absolute;bottom:10px;right:14px;
+      background:rgba(0,0,0,0.65);color:#cdd;font-size:11px;
+      padding:3px 10px;border-radius:10px;opacity:0;transition:opacity 0.3s;
+    }
+    .g-card:hover .img-box::after{opacity:1}
+    .g-card .info{padding:18px 20px 22px}
+    .g-card .info h3{font-size:17px;font-weight:600;margin-bottom:4px;color:#e4e6eb}
+    .g-card .info p{font-size:13px;color:#8f96a0;line-height:1.5}
+
+    /* ===== Skills Grid ===== */
+    .skills-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:20px}
+    .skill-card{
+      background:#131720;border:1px solid #1e2838;border-radius:14px;
+      padding:28px 24px;text-align:center;transition:0.3s;
+    }
+    .skill-card:hover{border-color:#3c7eff;transform:translateY(-3px)}
+    .skill-card .icon{font-size:38px;margin-bottom:12px}
+    .skill-card h4{font-size:18px;font-weight:600;margin-bottom:6px}
+    .skill-card p{font-size:13px;color:#8f96a0}
+
+    /* ===== Lightbox ===== */
+    .lb{
+      display:none;position:fixed;inset:0;z-index:9999;
+      background:rgba(0,0,0,0.94);flex-direction:column;
+      align-items:center;justify-content:center;
+    }
+    .lb.on{display:flex}
+    .lb img{max-width:92vw;max-height:80vh;object-fit:contain;border-radius:8px}
+    .lb .lb-t{font-size:18px;font-weight:600;color:#fff;margin-top:18px}
+    .lb .lb-d{font-size:14px;color:#9aa0a6;margin-top:4px}
+    .lb .cls{
+      position:absolute;top:28px;right:36px;font-size:38px;color:#fff;
+      cursor:pointer;width:48px;height:48px;display:flex;align-items:center;
+      justify-content:center;background:rgba(255,255,255,0.06);border-radius:50%;transition:0.2s;
+    }
+    .lb .cls:hover{background:rgba(255,255,255,0.16)}
+    .lb .nv{
+      position:absolute;top:50%;transform:translateY(-50%);font-size:30px;color:#fff;
+      cursor:pointer;width:48px;height:48px;display:flex;align-items:center;
+      justify-content:center;background:rgba(255,255,255,0.05);border-radius:50%;transition:0.2s;user-select:none;
+    }
+    .lb .nv:hover{background:rgba(255,255,255,0.14)}
+    .lb .pr{left:24px}.lb .nx{right:24px}
+
+    /* ===== Contact ===== */
+    .contact-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+    .c-card{
+      background:#131720;border:1px solid #1e2838;border-radius:14px;
+      padding:28px;text-align:center;transition:0.3s;
+    }
+    .c-card:hover{border-color:#3c7eff}
+    .c-card .icon{font-size:34px;margin-bottom:10px}
+    .c-card h4{font-size:15px;margin-bottom:4px;color:#b9c6d3}
+    .c-card a,.c-card span{font-size:14px;color:#7cb8ff;word-break:break-all}
+
+    /* ===== Footer ===== */
+    footer{text-align:center;padding:44px 24px;border-top:1px solid #1a1f2b;color:#5f6368;font-size:13px}
+
+    /* ===== Responsive ===== */
+    @media(max-width:768px){
+      .nav{padding:12px 20px}
+      .nav .links{gap:14px}
+      .nav .links a{font-size:12px}
+      .hero h1{font-size:42px}
+      .hero .sub{font-size:18px}
+      .sec-title{font-size:30px}
+      .gallery{grid-template-columns:1fr}
+      .theme-banner{flex-direction:column;text-align:center;padding:28px 24px}
+      .stats-row{gap:28px}
+      .stat-num{font-size:28px}
+      .lb .pr{left:8px}.lb .nx{right:8px}
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAV ========== -->
+  <nav class="nav">
+    <div class="logo">ZL · Portfolio</div>
+    <ul class="links">
+      <li><a href="#app-ui">App UI</a></li>
+      <li><a href="#graphic">平面设计</a></li>
+      <li><a href="#skills">技能</a></li>
+      <li><a href="#contact">联系</a></li>
+      <li><a href="mailto:3243480177@qq.com" class="nav-cta">📧 联系我</a></li>
+    </ul>
+  </nav>
+
+  <!-- ========== HERO ========== -->
+  <header class="hero">
+    <div class="hero-content">
+      <div class="hero-tag">📁 PERSONAL PORTFOLIO</div>
+      <h1>曾<span class="hl">丽</span></h1>
+      <p class="sub">数字媒体设计师 · UI/UX 设计 · 平面设计</p>
+      <p class="desc">
+        重庆机电职业技术大学数字媒体技术专业本科生，专注于移动端UI设计、平面广告物料设计及视频剪辑后期制作。熟练运用设计工具，具备从创意构思到视觉落地的完整设计流程能力。
+      </p>
+      <div class="hero-btns">
+        <a href="#app-ui" class="btn btn-p">📱 查看作品</a>
+        <a href="#contact" class="btn btn-o">📬 联系我</a>
+      </div>
+      <div class="stats-row">
+        <div class="stat"><div class="stat-num">21</div><div class="stat-label">设计作品</div></div>
+        <div class="stat"><div class="stat-num">2</div><div class="stat-label">主题方向</div></div>
+        <div class="stat"><div class="stat-num">8</div><div class="stat-label">App界面</div></div>
+        <div class="stat"><div class="stat-num">13</div><div class="stat-label">平面物料</div></div>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========== APP UI SECTION ========== -->
+  <section id="app-ui">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-tag">PART 1</div>
+        <h2 class="sec-title">📱 App UI 界面设计</h2>
+        <p class="sec-desc">社区电商移动应用全功能界面设计，从登录到购物闭环，覆盖核心用户体验链路</p>
+      </div>
+
+      <div class="theme-banner">
+        <div class="theme-icon">📱</div>
+        <div class="theme-info">
+          <h3>智慧社区电商 App · 移动端UI设计</h3>
+          <p>一套完整的社区电商移动应用界面设计方案，包含登录验证、首页信息流、商城分类浏览、购物车与订单结算、社区互动反馈、个人中心管理等功能模块。注重视觉一致性与用户体验流畅度，适配主流移动端尺寸。</p>
+          <div class="tags">
+            <span class="tag">UI/UX Design</span><span class="tag">Mobile App</span><span class="tag">社区电商</span><span class="tag">交互设计</span><span class="tag">C4D</span><span class="tag">Figma</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery" id="gallery-app"></div>
+    </div>
+  </section>
+
+  <!-- ========== GRAPHIC SECTION ========== -->
+  <section id="graphic" style="background:rgba(255,255,255,0.006)">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-tag">PART 2</div>
+        <h2 class="sec-title">🎨 平面广告物料设计</h2>
+        <p class="sec-desc">多规格海报、横幅、贴画设计，覆盖大型户外广告到小型室内装饰贴画的完整物料体系</p>
+      </div>
+
+      <div class="theme-banner">
+        <div class="theme-icon">🎨</div>
+        <div class="theme-info">
+          <h3>海报横幅 · 贴画物料 · 印刷品设计</h3>
+          <p>涵盖从 298cm 大型户外横幅到 50cm 小型室内贴画的多种尺寸规格，包括竖版海报、超宽横幅、展示墙面贴画等。适应展会、店铺、活动、室内装饰等不同展示场景的视觉需求。</p>
+          <div class="tags">
+            <span class="tag">Graphic Design</span><span class="tag">海报设计</span><span class="tag">横幅/易拉宝</span><span class="tag">贴画墙贴</span><span class="tag">印刷物料</span><span class="tag">Photoshop</span><span class="tag">C4D</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="gallery" id="gallery-graphic"></div>
+    </div>
+  </section>
+
+  <!-- ========== SKILLS ========== -->
+  <section id="skills">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-tag">SKILLS</div>
+        <h2 class="sec-title">🛠 专业技能</h2>
+        <p class="sec-desc">数字媒体技术专业背景，兼具设计审美与技术实现能力</p>
+      </div>
+
+      <div class="skills-grid">
+        <div class="skill-card">
+          <div class="icon">🎨</div>
+          <h4>UI/UX 界面设计</h4>
+          <p>移动端App界面设计、用户体验流程设计、交互原型制作</p>
+        </div>
+        <div class="skill-card">
+          <div class="icon">🖼</div>
+          <h4>平面广告设计</h4>
+          <p>海报、横幅、易拉宝、贴画等印刷物料设计，多尺寸适配</p>
+        </div>
+        <div class="skill-card">
+          <div class="icon">✂️</div>
+          <h4>视频剪辑与后期</h4>
+          <p>剪映 CapCut 专业剪辑，短视频制作、转场特效、调色后期</p>
+        </div>
+        <div class="skill-card">
+          <div class="icon">🎬</div>
+          <h4>数字媒体制作</h4>
+          <p>数字内容创作，多媒体素材处理与整合输出</p>
+        </div>
+        <div class="skill-card">
+          <div class="icon">🖌</div>
+          <h4>设计工具</h4>
+          <p>Photoshop · C4D · Figma · 剪映 · Canva</p>
+        </div>
+        <div class="skill-card">
+          <div class="icon">📐</div>
+          <h4>版式与视觉设计</h4>
+          <p>版式构图、配色方案、品牌视觉风格统一</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CONTACT ========== -->
+  <section id="contact">
+    <div class="container">
+      <div class="sec-head">
+        <div class="sec-tag">CONTACT</div>
+        <h2 class="sec-title">📬 联系方式</h2>
+        <p class="sec-desc">欢迎合作与交流，期待你的联系</p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="c-card">
+          <div class="icon">📧</div>
+          <h4>电子邮箱</h4>
+          <a href="mailto:3243480177@qq.com">3243480177@qq.com</a>
+        </div>
+        <div class="c-card">
+          <div class="icon">📱</div>
+          <h4>联系电话</h4>
+          <span>18716866693</span>
+        </div>
+        <div class="c-card">
+          <div class="icon">🎓</div>
+          <h4>教育背景</h4>
+          <span>重庆机电职业技术大学<br>数字媒体技术 · 本科</span>
+        </div>
+        <div class="c-card">
+          <div class="icon">📍</div>
+          <h4>所在城市</h4>
+          <span>中国 · 重庆</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    © 2026 曾丽 · 个人作品集 · 数字媒体技术 · All Rights Reserved
+  </footer>
+
+  <!-- ========== LIGHTBOX ========== -->
+  <div class="lb" id="lb">
+    <span class="cls" id="lb-cls">&times;</span>
+    <span class="nv pr" id="lb-pr">&#8249;</span>
+    <span class="nv nx" id="lb-nx">&#8250;</span>
+    <img src="" alt="" id="lb-img"/>
+    <div class="lb-t" id="lb-t"></div>
+    <div class="lb-d" id="lb-d"></div>
+  </div>
+
+  <script>
+    const appData = [
+      {f:'image8.jpeg',t:'登录页 Login',d:'用户登录/注册界面，支持多种登录方式切换，简洁现代的视觉风格，清晰的交互引导'},
+      {f:'image6.jpeg',t:'闪屏页 Splash',d:'应用启动闪屏引导页，品牌视觉传达与过渡动效设计，增强用户第一印象'},
+      {f:'image3.jpeg',t:'首页 Home',d:'社区电商首页整体布局，商品推荐卡片、分类导航入口与运营活动位设计'},
+      {f:'image5.jpeg',t:'商城页 Shop',d:'商品分类浏览与筛选页面，清晰的商品信息层级展示与流畅的浏览体验'},
+      {f:'image7.jpeg',t:'购物页 Cart',d:'购物车管理与订单结算流程页面，简洁直观的操作路径设计'},
+      {f:'image4.jpeg',t:'社区反馈 Community',d:'社区互动与用户反馈功能，增强用户参与感与社区归属感'},
+      {f:'image2.jpeg',t:'个人中心 Profile 2',d:'用户设置与数据管理页面，个人化功能入口与信息展示'},
+      {f:'image1.jpeg',t:'个人中心 Profile',d:'用户个人资料展示与核心功能导航页面，清晰的信息层次'},
+    ];
+
+    const graphicData = [
+      {f:'image9.jpeg',t:'横幅 298×68cm',d:'大型户外展示横幅设计，适合展会、大型活动现场等远距离视觉传达场景'},
+      {f:'image10.jpeg',t:'竖版海报 87×60cm (2)',d:'竖版宣传海报设计变体2，适合立式展示架与室内宣传展位'},
+      {f:'image11.jpeg',t:'横幅 4.55×0.95m',d:'超宽横幅广告排版设计，适合门头招牌、宽幅展示位等横向大空间'},
+      {f:'image12.jpeg',t:'海报 3×1.2m',d:'大幅面展示海报设计，适合墙面主视觉、展板与活动背景墙'},
+      {f:'image13.jpeg',t:'海报 2×0.9m',d:'中幅面宣传海报，适合室内展示、公告栏与中小型活动宣传'},
+      {f:'image14.png',t:'大幅海报 2.82×1.68m',d:'大型展示海报整体效果呈现，视觉冲击力与空间氛围营造'},
+      {f:'image15.png',t:'横幅 2.33×0.52m',d:'中型横幅排版设计，适合店铺促销、产品展示等商业场景'},
+      {f:'image16.png',t:'横幅 2.8×0.45m',d:'长条横幅展示设计，适配走廊、通道等窄长空间的视觉传达'},
+      {f:'image17.png',t:'横幅 2.08×0.76m',d:'中型广告横幅通用尺寸，灵活的展示方案适配多种场景'},
+      {f:'image18.png',t:'贴画 1.94×0.7m (1)',d:'墙面贴画设计变体1，适合室内墙面装饰与氛围营造'},
+      {f:'image19.png',t:'贴画 1.94×0.7m (2)',d:'墙面贴画设计变体2，不同视觉风格与配色方案探索'},
+      {f:'image20.png',t:'贴画 1.89×0.7m (3)',d:'展示贴画设计变体3，场景化展示效果与空间搭配'},
+      {f:'image21.png',t:'贴画 1.8×0.5m (4)',d:'小型展示贴画设计变体4，灵活的尺寸适配小空间装饰'},
+    ];
+
+    function build(elId, data){
+      const el=document.getElementById(elId);
+      data.forEach((d,i)=>{
+        const card=document.createElement('div');
+        card.className='g-card';
+        card.innerHTML=`<div class="img-box"><img src="images/${d.f}" alt="${d.t}" loading="lazy"/></div><div class="info"><h3>${d.t}</h3><p>${d.d}</p></div>`;
+        card.addEventListener('click',()=>openLb(data,i));
+        el.appendChild(card);
+      });
+    }
+    build('gallery-app',appData);
+    build('gallery-graphic',graphicData);
+
+    let lbD=[],lbI=0;
+    const lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbT=document.getElementById('lb-t'),lbDd=document.getElementById('lb-d');
+    function openLb(d,i){lbD=d;lbI=i;updLb();lb.classList.add('on');document.body.style.overflow='hidden'}
+    function clsLb(){lb.classList.remove('on');document.body.style.overflow=''}
+    function updLb(){const d=lbD[lbI];lbImg.src=`images/${d.f}`;lbT.textContent=d.t;lbDd.textContent=d.d}
+    function prv(){lbI=(lbI-1+lbD.length)%lbD.length;updLb()}
+    function nxt(){lbI=(lbI+1)%lbD.length;updLb()}
+    document.getElementById('lb-cls').addEventListener('click',clsLb);
+    document.getElementById('lb-pr').addEventListener('click',prv);
+    document.getElementById('lb-nx').addEventListener('click',nxt);
+    lb.addEventListener('click',e=>{if(e.target===lb)clsLb()});
+    document.addEventListener('keydown',e=>{
+      if(!lb.classList.contains('on'))return;
+      if(e.key==='Escape')clsLb();
+      if(e.key==='ArrowLeft')prv();
+      if(e.key==='ArrowRight')nxt();
+    });
+  </script>
+</body>
+</html>
